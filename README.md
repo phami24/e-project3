@@ -1,5 +1,5 @@
 # e-project3
 Aptech Project 3
-```bash
+```java
 print('Hello world');
 ```
