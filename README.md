@@ -12,16 +12,16 @@ Excell-On currently operates through various branches, each specializing in diff
 The proposed solution involves the development of a web application with the following functionalities:
 
 ### :pushpin: Non-Financial Functionalities :
-  1.Services Details: Maintain details of the services offered by Excell-On.
-  2.Department Details: Manage information about different departments within Excell-On.
-  3.Employee Details: Keep track of employee details based on designation and services.
-  4.Service Charges: Record charges for each service offered by Excell-On.
-  5.Client Details: Maintain a database of client information.
-  6.Preferred Services: Track services preferred by clients.
-  7.Product and Service Details: Manage details of products and services offered by clients.
-  8.Total Charges Calculation: Calculate total charges for clients based on the services they prefer.
-  9.Payment Details: Record details of payments received from clients.
-  10.Reports Generation: Generate reports for late payments, payments, clients, and employees for a specific duration.
+  - Services Details: Maintain details of the services offered by Excell-On.
+  - Department Details: Manage information about different departments within Excell-On.
+  - Employee Details: Keep track of employee details based on designation and services.
+  - Service Charges: Record charges for each service offered by Excell-On.
+  - Client Details: Maintain a database of client information.
+  - Preferred Services: Track services preferred by clients.
+  - Product and Service Details: Manage details of products and services offered by clients.
+  - Total Charges Calculation: Calculate total charges for clients based on the services they prefer.
+  - Payment Details: Record details of payments received from clients.
+  - Reports Generation: Generate reports for late payments, payments, clients, and employees for a specific duration.
 
 ### :pushpin: Financial Functionalities : 
 Define the charge structure for different services offered by Excell-On.
@@ -41,10 +41,10 @@ Advanced Search: Implement an advanced search option for efficient record retrie
 
 #### Getting Started : :open_file_folder:
 Follow these steps to set up and run the Excell-On Services web application:
-  1.Clone the repository.
-  2.Navigate to the frontend directory and run npm install to install Angular dependencies.
-  3.Run the .NET API server.
-  4.Start the Angular application using ng serve.
+  1. Clone the repository.
+  2. Navigate to the frontend directory and run npm install to install Angular dependencies.
+  3. Run the .NET API server.
+  4. Start the Angular application using ng serve.
 
 > Additional Notes :
 Ensure that all dependencies are properly installed before running the application.
