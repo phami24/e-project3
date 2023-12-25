@@ -27,10 +27,10 @@ The proposed solution involves the development of a web application with the fol
 Define the charge structure for different services offered by Excell-On.
 
 ### :pushpin: Functional Requirements :
-Database: The application should have a robust database to store services, department details, employee details, client information, preferred services, product details, and payment details.
-Charges Management: Enable the maintenance of charges for each type of service.
-CRUD Operations: Support Insert, Update, Delete, Search, and Retrieve operations for client records.
-Advanced Search: Implement an advanced search option for efficient record retrieval.
+- Database: The application should have a robust database to store services, department details, employee details, client information, preferred services, product details, and payment details.
+- Charges Management: Enable the maintenance of charges for each type of service.
+- CRUD Operations: Support Insert, Update, Delete, Search, and Retrieve operations for client records.
+- Advanced Search: Implement an advanced search option for efficient record retrieval.
 
 ### :hammer_and_wrench: Technologies Used :
 - Angular 16
