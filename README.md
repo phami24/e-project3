@@ -11,7 +11,7 @@ Excell-On currently operates through various branches, each specializing in diff
 ## Proposed Solution :bookmark_tabs:
 The proposed solution involves the development of a web application with the following functionalities:
 
-### :pushpin: ► Non-Financial Functionalities :
+### :pushpin: Non-Financial Functionalities :
 1.Services Details: Maintain details of the services offered by Excell-On.
 2.Department Details: Manage information about different departments within Excell-On.
 3.Employee Details: Keep track of employee details based on designation and services.
@@ -23,16 +23,16 @@ The proposed solution involves the development of a web application with the fol
 9.Payment Details: Record details of payments received from clients.
 10.Reports Generation: Generate reports for late payments, payments, clients, and employees for a specific duration.
 
-### :pushpin: ► Financial Functionalities : 
+### :pushpin: Financial Functionalities : 
 Define the charge structure for different services offered by Excell-On.
 
-### ► Functional Requirements :
+### :pushpin: Functional Requirements :
 Database: The application should have a robust database to store services, department details, employee details, client information, preferred services, product details, and payment details.
 Charges Management: Enable the maintenance of charges for each type of service.
 CRUD Operations: Support Insert, Update, Delete, Search, and Retrieve operations for client records.
 Advanced Search: Implement an advanced search option for efficient record retrieval.
 
-### :pushpin: ► Technologies Used :
+### :hammer_and_wrench: Technologies Used :
 - Angular 16
 - .NET API
 - Tailwind CSS :pencil2:
