@@ -1,0 +1,57 @@
+1. Khả năng phi tài chính:
+
+a. Quản lý chi phí dịch vụ:
+
+Hệ thống cần theo dõi chi tiết về các dịch vụ mà Excell-on cung cấp.
+Phải có khả năng thêm, sửa, xóa, và tìm kiếm thông tin về giá cước của mỗi dịch vụ.
+
+b. Các mức giá cước:
+
+Các dịch vụ cung cấp có các mức giá cước khác nhau.
+Dữ liệu này sẽ giúp tính toán tổng chi phí cho từng khách hàng dựa trên dịch vụ mà họ chọn.
+
+c. Quản lý thanh toán:
+
+Ghi lại chi tiết về thanh toán từ khách hàng.
+Tính toán và báo cáo về thanh toán muộn và thanh toán đúng hạn.
+
+2. Khả năng phi tài chính:
+
+a. Quản lý dịch vụ:
+
+Dữ liệu về các dịch vụ được cung cấp bởi Excell-on cần được duy trì.
+Thêm, sửa, xóa và tìm kiếm thông tin về các dịch vụ này.
+
+b. Quản lý bộ phận:
+
+Dữ liệu về các bộ phận khác nhau trong tổ chức (HR Management, Administration, Service, Training, Internet Security, Auditors) cần được theo dõi.
+
+c. Quản lý nhân sự:
+
+Ghi lại thông tin nhân viên dựa trên chức vụ và dịch vụ (in-bound, out-bound, v.v.).
+Hỗ trợ tìm kiếm và truy xuất thông tin nhân viên.
+
+d. Quản lý khách hàng:
+
+Dữ liệu về khách hàng, dịch vụ khách hàng ưa thích, và sản phẩm/dịch vụ khách hàng cung cấp cần được duy trì.
+
+e. Báo cáo và Thống kê:
+
+Tạo báo cáo về thanh toán muộn, thanh toán, khách hàng và nhân viên dựa trên dịch vụ trong khoảng thời gian cụ thể.
+
+3. Tính năng tìm kiếm nâng cao:
+
+Cung cấp tìm kiếm nâng cao để lấy và truy xuất các bản ghi dữ liệu theo các tiêu chí cụ thể.
+
+4. Dữ liệu và Bảo mật:
+
+Cần có cơ sở dữ liệu chứa thông tin về dịch vụ, bộ phận, nhân viên, khách hàng và thanh toán.
+Các biện pháp bảo mật mạnh mẽ để bảo vệ thông tin quan trọng của khách hàng và doanh nghiệp.
+
+5. Giao diện người dùng:
+
+Giao diện người dùng thân thiện, dễ sử dụng để quản lý và theo dõi thông tin.
+
+6. Tích hợp thanh toán:
+
+Nếu có, tích hợp cổng thanh toán để thuận tiện cho việc nhận thanh toán từ khách hàng.
