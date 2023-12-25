@@ -24,7 +24,7 @@ The proposed solution involves the development of a web application with the fol
   - Reports Generation: Generate reports for late payments, payments, clients, and employees for a specific duration.
 
 ### :pushpin: Financial Functionalities : 
-Define the charge structure for different services offered by Excell-On.
+  Define the charge structure for different services offered by Excell-On.
 
 ### :pushpin: Functional Requirements :
 - Database: The application should have a robust database to store services, department details, employee details, client information, preferred services, product details, and payment details.
