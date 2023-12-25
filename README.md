@@ -33,8 +33,8 @@ The proposed solution involves the development of a web application with the fol
 - Advanced Search: Implement an advanced search option for efficient record retrieval.
 
 ### :hammer_and_wrench: Technologies Used :
-- Angular 16
-- .NET API
+- [Angular](https://angular.io/).
+- [.Net API ](https://tailwindcss.com/).
 - Tailwind CSS :pencil2:
 - D3.js (for data visualization) :chart:
 
