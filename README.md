@@ -34,9 +34,9 @@ The proposed solution involves the development of a web application with the fol
 
 ### :hammer_and_wrench: Technologies Used :
 - [Angular](https://angular.io/).
-- [.Net API ](https://tailwindcss.com/).
-- Tailwind CSS :pencil2:
-- D3.js (for data visualization) :chart:
+- [.NET Platform](https://github.com/dotnet).
+- [Tailwind CSS](https://tailwindcss.com/) :pencil2:
+- [D3.js](https://d3js.org/) (for data visualization) :chart:
 
 
 #### Getting Started : :open_file_folder:
