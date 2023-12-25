@@ -33,10 +33,12 @@ CRUD Operations: Support Insert, Update, Delete, Search, and Retrieve operations
 Advanced Search: Implement an advanced search option for efficient record retrieval.
 
 ### ► Technologies Used :
-Angular 16
-.NET API
-Tailwind CSS
-D3.js (for data visualization)
+```
+- Angular 16
+- .NET API
+- Tailwind CSS
+- D3.js (for data visualization)
+```
 
 #### Getting Started :
 Follow these steps to set up and run the Excell-On Services web application:
@@ -44,7 +46,7 @@ Clone the repository.
 Navigate to the frontend directory and run npm install to install Angular dependencies.
 Run the .NET API server.
 Start the Angular application using ng serve.
-#### Additional Notes :
+> Additional Notes :
 Ensure that all dependencies are properly installed before running the application.
 For any issues or feature requests, please create a new GitHub issue.
 ##### Thank you for contributing to the Excell-On Services project!
