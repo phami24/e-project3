@@ -39,7 +39,7 @@ The proposed solution involves the development of a web application with the fol
 - [D3.js](https://d3js.org/) (for data visualization) :chart:
 
 
-#### Getting Started : :open_file_folder:
+#### :star: Getting Started : 
 Follow these steps to set up and run the Excell-On Services web application:
   1. Clone the repository.
   2. Navigate to the frontend directory and run npm install to install Angular dependencies.
