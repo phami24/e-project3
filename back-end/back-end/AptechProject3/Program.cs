@@ -47,7 +47,10 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
+builder.Services.AddCors(options => options.AddPolicy("FrontEnd", policy =>
+{
+    policy.WithOrigins("https://localhost:7180").AllowAnyMethod().AllowAnyHeader();
+}));
 
 builder.Services.AddScoped<IJwtService, JwtService>();
 
@@ -67,9 +70,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
+app.UseCors("FrontEnd");
 app.MapControllers();
-
 app.Run();
