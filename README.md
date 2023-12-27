@@ -33,13 +33,13 @@ The proposed solution involves the development of a web application with the fol
 - Advanced Search: Implement an advanced search option for efficient record retrieval.
 
 ### :hammer_and_wrench: Technologies Used :
-- Angular 16
-- .NET API
-- Tailwind CSS :pencil2:
-- D3.js (for data visualization) :chart:
+- [Angular](https://angular.io/).
+- [.NET Platform](https://github.com/dotnet).
+- [Tailwind CSS](https://tailwindcss.com/) :pencil2:
+- [D3.js](https://d3js.org/) (for data visualization) :chart:
 
 
-#### Getting Started : :open_file_folder:
+#### :star: Getting Started : 
 Follow these steps to set up and run the Excell-On Services web application:
   1. Clone the repository.
   2. Navigate to the frontend directory and run npm install to install Angular dependencies.
