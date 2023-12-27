@@ -52,12 +52,12 @@ namespace AptechProject3.Controllers
                 {
                     if (isCreate.Succeeded)
                     {
-                        var token = _jwtService.GenerateJwtToken(newUser);
+                        var token = await _jwtService.GenerateJwtTokenAsync(newUser);
                         await _userManager.AddToRoleAsync(newUser, role);
                         return Ok(new RegistrationRespone()
                         {
                             Result = true,
-                            Token = token
+                            Token = token.ToString()
                         });
                     }
                 }
@@ -88,12 +88,12 @@ namespace AptechProject3.Controllers
                 var isPasswordValid = await _userManager.CheckPasswordAsync(existingUser, request.Password);
                 if (isPasswordValid)
                 {
-                    var token = _jwtService.GenerateJwtToken(existingUser);
+                    var token = await _jwtService.GenerateJwtTokenAsync(existingUser);
                     return Ok(new LoginRespone()
                     {
                         Result = true,
-                        Token = token
-                    });
+                        Token = token.ToString()
+                    });; 
                 }
             }
             return BadRequest("Invalid request payload !");

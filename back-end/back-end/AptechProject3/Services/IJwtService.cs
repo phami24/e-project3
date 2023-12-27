@@ -4,6 +4,6 @@ namespace AptechProject3.Services
 {
     public interface IJwtService
     {
-        string GenerateJwtToken(IdentityUser user);
+        Task<string> GenerateJwtTokenAsync(IdentityUser user);
     }
 }
