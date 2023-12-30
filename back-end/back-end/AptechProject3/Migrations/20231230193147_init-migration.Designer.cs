@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AptechProject3.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20231225140407_InitIndentity")]
-    partial class InitIndentity
+    [Migration("20231230193147_init-migration")]
+    partial class initmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

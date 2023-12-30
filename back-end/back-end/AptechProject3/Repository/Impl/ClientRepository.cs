@@ -1,6 +1,7 @@
 ﻿using AptechProject3.Comon;
 using AptechProject3.Data;
 using AptechProject3.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AptechProject3.Repository.Impl
 {
@@ -10,4 +11,5 @@ namespace AptechProject3.Repository.Impl
         {
         }
     }
+    
 }

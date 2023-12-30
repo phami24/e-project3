@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AptechProject3.Migrations.AppDb
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231230072853_create-entity")]
-    partial class createentity
+    [Migration("20231230193206_init-migarion")]
+    partial class initmigarion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -190,6 +190,10 @@ namespace AptechProject3.Migrations.AppDb
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");

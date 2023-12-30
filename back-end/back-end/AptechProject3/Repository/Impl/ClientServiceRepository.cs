@@ -9,5 +9,6 @@ namespace AptechProject3.Repository.Impl
         public ClientServiceRepository(AppDbContext context, ILogger logger) : base(context, logger)
         {
         }
+
     }
 }
