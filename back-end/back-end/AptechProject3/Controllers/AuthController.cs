@@ -1,5 +1,6 @@
 ﻿using AptechProject3.Configuration;
 using AptechProject3.DTOs.Auth;
+using AptechProject3.Models;
 using AptechProject3.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -42,7 +43,7 @@ namespace AptechProject3.Controllers
                 {
                     return BadRequest("Email is already exits !");
                 }
-                var newUser = new IdentityUser()
+                var newUser = new Employee()
                 {
                     Email = request.Email,
                     UserName = request.Email,
