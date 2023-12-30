@@ -33,11 +33,11 @@ The proposed solution involves the development of a web application with the fol
 - Advanced Search: Implement an advanced search option for efficient record retrieval.
 
 ### :hammer_and_wrench: Technologies Used :
-- [Angular](https://angular.io/).
-- [.NET Platform](https://github.com/dotnet).
-- [Tailwind CSS](https://tailwindcss.com/) :pencil2:
-- [D3.js](https://d3js.org/) (for data visualization) :chart:
-
+  ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white) <br>
+  ![.NET](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)<br>
+  ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) <br>
+  ![D3.js](https://img.shields.io/badge/d3%20js-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white)  <br>
+  ![Microsoft SQL Server](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)  <br>
 
 #### :star: Getting Started : 
 Follow these steps to set up and run the Excell-On Services web application:
