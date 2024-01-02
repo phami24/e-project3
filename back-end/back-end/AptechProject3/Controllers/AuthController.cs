@@ -21,12 +21,14 @@ namespace AptechProject3.Controllers
         private readonly JwtConfig _jwtConfig;
         private readonly IJwtService _jwtService;
         private readonly IDepartmentService _departmentService;
+        private readonly IUnitOfWork _unitOfWork;
         public AuthController(
             ILogger<AuthController> logger,
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IOptionsMonitor<JwtConfig> optionsMonitor,
             IJwtService jwtService,
+            IUnitOfWork unitOfWork,
             IDepartmentService departmentService
             )
         {
@@ -36,6 +38,7 @@ namespace AptechProject3.Controllers
             _jwtConfig = optionsMonitor.CurrentValue;
             _jwtService = jwtService;
             _departmentService = departmentService;
+            _unitOfWork = unitOfWork;
         }
         [HttpPost]
         [Route("Register")]
@@ -60,6 +63,8 @@ namespace AptechProject3.Controllers
                 {
                     await _userManager.AddToRoleAsync(newUser, "User");
                     var token = await _jwtService.GenerateJwtTokenAsync(newUser);
+                    await _unitOfWork.Clients.Add(newUser);
+                    await _unitOfWork.CompleteAsync();
                     return Ok(new ClientRegistrationRespone()
                     {
                         Result = true,
@@ -85,7 +90,7 @@ namespace AptechProject3.Controllers
                 {
                     return BadRequest("Email is already exits !");
                 }
-                var newUser = new Employee()
+                var newEmp = new Employee()
                 {
                     FirstName = request.FirstName,
                     LastName = request.LastName,
@@ -96,17 +101,19 @@ namespace AptechProject3.Controllers
                 Department? department = await _departmentService.GetById(request.DepartmentId);
                 if (department != null)
                 {
-                    newUser.Department = department;
+                    newEmp.Department = department;
                 }
                 else
                 {
                     return BadRequest("Department not found");
                 }
-                var isCreate = await _userManager.CreateAsync(newUser, request.Password);
+                var isCreate = await _userManager.CreateAsync(newEmp, request.Password);
                 if (isCreate.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(newUser, "User");
-                    var token = await _jwtService.GenerateJwtTokenAsync(newUser);
+                    await _userManager.AddToRoleAsync(newEmp, "User");
+                    await _unitOfWork.Employees.Add(newEmp);
+                    await _unitOfWork.CompleteAsync();
+                    var token = await _jwtService.GenerateJwtTokenAsync(newEmp);
                     return Ok(new ClientRegistrationRespone()
                     {
                         Result = true,

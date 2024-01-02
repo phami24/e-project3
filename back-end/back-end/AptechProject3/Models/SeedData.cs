@@ -24,6 +24,23 @@ namespace AptechProject3.Models
                     new IdentityRole() { Name = "User", ConcurrencyStamp = "3", NormalizedName = "User" }
                 );
                 context.SaveChanges();
+                // Seed a user with Admin role
+                var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+                var adminUser = new IdentityUser
+                {
+                    UserName = "admin@gmail.com", // Set the desired username
+                    Email = "admin@gmail.com",    // Set the desired email
+                };
+
+                var result = userManager.CreateAsync(adminUser, "Minh@1234").Result; // Set the desired password
+
+                if (result.Succeeded)
+                {
+                    userManager.AddToRoleAsync(adminUser, "Admin").Wait(); // Add the user to the "Admin" role
+                }
+
+                context.SaveChanges();
             }
         }
     }
