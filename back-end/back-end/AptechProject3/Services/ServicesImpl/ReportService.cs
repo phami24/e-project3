@@ -6,7 +6,7 @@ using AptechProject3.Models;
 
 namespace AptechProject3.Services.ServicesImpl
 {
-    public class ReportService : IReportService
+    public class ReportService : IGenericService<Report>, IReportService
     {
         private readonly IUnitOfWork _unitOfWork;
 

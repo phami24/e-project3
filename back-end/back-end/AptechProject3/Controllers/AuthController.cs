@@ -1,7 +1,9 @@
-﻿using AptechProject3.Configuration;
+﻿using AptechProject3.Comon;
+using AptechProject3.Configuration;
 using AptechProject3.DTOs.Auth;
 using AptechProject3.Models;
 using AptechProject3.Services;
+using AptechProject3.Services.ServicesImpl;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -18,12 +20,14 @@ namespace AptechProject3.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JwtConfig _jwtConfig;
         private readonly IJwtService _jwtService;
+        private readonly IDepartmentService _departmentService;
         public AuthController(
             ILogger<AuthController> logger,
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IOptionsMonitor<JwtConfig> optionsMonitor,
-            IJwtService jwtService
+            IJwtService jwtService,
+            IDepartmentService departmentService
             )
         {
             _logger = logger;
@@ -31,10 +35,48 @@ namespace AptechProject3.Controllers
             _roleManager = roleManager;
             _jwtConfig = optionsMonitor.CurrentValue;
             _jwtService = jwtService;
+            _departmentService = departmentService;
         }
         [HttpPost]
         [Route("Register")]
-        public async Task<IActionResult> Register([FromBody] UserRegistrationRequestDto request, string role)
+        public async Task<IActionResult> Register([FromBody] UserRegistrationRequestDto request)
+        {
+            if (ModelState.IsValid)
+            {
+                var email = await _userManager.FindByEmailAsync(request.Email);
+                if (email != null)
+                {
+                    return BadRequest("Email is already exits !");
+                }
+                var newUser = new Client()
+                {
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    Email = request.Email,
+                    UserName = request.Email,
+                };
+                var isCreate = await _userManager.CreateAsync(newUser, request.Password);
+                if (isCreate.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(newUser, "User");
+                    var token = await _jwtService.GenerateJwtTokenAsync(newUser);
+                    return Ok(new ClientRegistrationRespone()
+                    {
+                        Result = true,
+                        Token = token.ToString()
+                    });
+                }
+
+                return BadRequest(isCreate.Errors.Select(x => x.Description).ToList());
+
+            }
+
+            return BadRequest("Invalid request payload !");
+
+        }
+        [HttpPost]
+        [Route("EmpRegister")]
+        public async Task<IActionResult> EmpRegister([FromBody] EmployeeRegistrationRequestDto request)
         {
             if (ModelState.IsValid)
             {
@@ -45,26 +87,31 @@ namespace AptechProject3.Controllers
                 }
                 var newUser = new Employee()
                 {
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
                     Email = request.Email,
                     UserName = request.Email,
+
                 };
-                var isCreate = await _userManager.CreateAsync(newUser, request.Password);
-                if (await _roleManager.RoleExistsAsync(role))
+                Department? department = await _departmentService.GetById(request.DepartmentId);
+                if (department != null)
                 {
-                    if (isCreate.Succeeded)
-                    {
-                        var token = await _jwtService.GenerateJwtTokenAsync(newUser);
-                        await _userManager.AddToRoleAsync(newUser, role);
-                        return Ok(new RegistrationRespone()
-                        {
-                            Result = true,
-                            Token = token.ToString()
-                        });
-                    }
+                    newUser.Department = department;
                 }
                 else
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, "This Role is not exits");
+                    return BadRequest("Department not found");
+                }
+                var isCreate = await _userManager.CreateAsync(newUser, request.Password);
+                if (isCreate.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(newUser, "User");
+                    var token = await _jwtService.GenerateJwtTokenAsync(newUser);
+                    return Ok(new ClientRegistrationRespone()
+                    {
+                        Result = true,
+                        Token = token.ToString()
+                    });
                 }
 
                 return BadRequest(isCreate.Errors.Select(x => x.Description).ToList());
@@ -94,11 +141,10 @@ namespace AptechProject3.Controllers
                     {
                         Result = true,
                         Token = token.ToString()
-                    });; 
+                    }); ;
                 }
             }
             return BadRequest("Invalid request payload !");
-
         }
     }
 }

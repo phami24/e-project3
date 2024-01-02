@@ -18,7 +18,6 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 // Add services to the container.
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -56,7 +55,16 @@ builder.Services.AddCors(options => options.AddPolicy("FrontEnd", policy =>
     policy.WithOrigins("https://localhost:7180").AllowAnyMethod().AllowAnyHeader();
 }));
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IClientService, ClientServices>();
+builder.Services.AddScoped<IClientServiceService, ClientServiceService>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddScoped<IServiceChargesService, ServiceChargesService>();
+builder.Services.AddScoped<IServiceService, ServiceService>();
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())

@@ -6,7 +6,7 @@ using AptechProject3.Models;
 
 namespace AptechProject3.Services.ServicesImpl
 {
-    public class ServiceService : IServiceService
+    public class ServiceService : IGenericService<Service>, IServiceService
     {
         private readonly IUnitOfWork _unitOfWork;
 

@@ -6,7 +6,7 @@ using AptechProject3.Models;
 
 namespace AptechProject3.Services.ServicesImpl
 {
-    public class PaymentService : IPaymentService
+    public class PaymentService : IGenericService<Payment>, IPaymentService
     {
         private readonly IUnitOfWork _unitOfWork;
 

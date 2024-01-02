@@ -6,7 +6,7 @@ using AptechProject3.Models;
 
 namespace AptechProject3.Services.ServicesImpl
 {
-    public class DepartmentService : IDepartmentService
+    public class DepartmentService : IGenericService<Department>, IDepartmentService
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -14,6 +14,7 @@ namespace AptechProject3.Services.ServicesImpl
         {
             _unitOfWork = unitOfWork;
         }
+
 
         public async Task<Department> Create(Department entity)
         {
