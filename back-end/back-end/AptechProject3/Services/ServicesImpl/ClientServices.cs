@@ -6,27 +6,27 @@ using AptechProject3.Models;
 
 namespace AptechProject3.Services.ServicesImpl
 {
-    public class ServiceService : IServiceService
+    public class ClientServices : IClientService
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiceService(IUnitOfWork unitOfWork)
+        public ClientServices(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Service> Create(Service entity)
+        public async Task<Client> Create(Client entity)
         {
             try
             {
-                await _unitOfWork.Services.Add(entity);
+                await _unitOfWork.Clients.Add(entity);
                 await _unitOfWork.CompleteAsync();
                 return entity;
             }
             catch (Exception ex)
             {
                 // Log or handle the exception accordingly
-                throw new Exception("Error occurred while creating service.", ex);
+                throw new Exception("Error occurred while creating client.", ex);
             }
         }
 
@@ -34,58 +34,58 @@ namespace AptechProject3.Services.ServicesImpl
         {
             try
             {
-                Service? deleteService = await _unitOfWork.Services.GetById(id);
-                if (deleteService != null)
+                Client? deleteClient = await _unitOfWork.Clients.GetById(id);
+                if (deleteClient != null)
                 {
-                    await _unitOfWork.Services.Delete(deleteService);
+                    await _unitOfWork.Clients.Delete(deleteClient);
                     await _unitOfWork.CompleteAsync();
                 }
             }
             catch (Exception ex)
             {
                 // Log or handle the exception accordingly
-                throw new Exception("Error occurred while deleting service.", ex);
+                throw new Exception("Error occurred while deleting client.", ex);
             }
         }
 
-        public async Task<IEnumerable<Service>> GetAll()
+        public async Task<IEnumerable<Client>> GetAll()
         {
             try
             {
-                return await _unitOfWork.Services.All();
+                return await _unitOfWork.Clients.All();
             }
             catch (Exception ex)
             {
                 // Log or handle the exception accordingly
-                throw new Exception("Error occurred while retrieving services.", ex);
+                throw new Exception("Error occurred while retrieving clients.", ex);
             }
         }
 
-        public async Task<Service?> GetById(int id)
+        public async Task<Client?> GetById(int id)
         {
             try
             {
-                return await _unitOfWork.Services.GetById(id);
+                return await _unitOfWork.Clients.GetById(id);
             }
             catch (Exception ex)
             {
                 // Log or handle the exception accordingly
-                throw new Exception("Error occurred while retrieving service by ID.", ex);
+                throw new Exception("Error occurred while retrieving client by ID.", ex);
             }
         }
 
-        public async Task<Service> Update(Service entity)
+        public async Task<Client> Update(Client entity)
         {
             try
             {
-                await _unitOfWork.Services.Update(entity);
+                await _unitOfWork.Clients.Update(entity);
                 await _unitOfWork.CompleteAsync();
                 return entity;
             }
             catch (Exception ex)
             {
                 // Log or handle the exception accordingly
-                throw new Exception("Error occurred while updating service.", ex);
+                throw new Exception("Error occurred while updating client.", ex);
             }
         }
     }

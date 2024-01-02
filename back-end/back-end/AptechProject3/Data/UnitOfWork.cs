@@ -30,9 +30,9 @@ namespace AptechProject3.Data
             RoleManager<IdentityRole> roleManager
            )
         {
+            var _logger = loggerFactory.CreateLogger("logs");
             _context = context;
             _authDbContext = authDbContext;
-            var _logger = loggerFactory.CreateLogger("logs");
             Clients = new ClientRepository(_context, _logger);
             ClientServices = new ClientServiceRepository(_context, _logger);
             Departments = new DepartmentRepository(_context, _logger);

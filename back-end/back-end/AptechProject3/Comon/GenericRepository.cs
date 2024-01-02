@@ -12,7 +12,7 @@ namespace AptechProject3.Comon
         {
             _context = context;
             _logger = logger;
-            _dbSet = _context.Set<T>();
+            this._dbSet = _context.Set<T>();
         }
         public virtual async Task<IEnumerable<T>> All()
         {
@@ -40,12 +40,12 @@ namespace AptechProject3.Comon
             return true;
         }
 
-        public async Task<int> Count()
+        public virtual async Task<int> Count()
         {
             return await _dbSet.CountAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAll(int page, int pageSize)
+        public virtual async Task<IEnumerable<T>> GetAll(int page, int pageSize)
         {
             return await _dbSet.Skip((page - 1) * pageSize)
                              .Take(pageSize)

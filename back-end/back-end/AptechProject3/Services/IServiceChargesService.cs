@@ -1,6 +1,8 @@
-﻿namespace AptechProject3.Services
+﻿using AptechProject3.Models;
+
+namespace AptechProject3.Services
 {
-    public interface IServiceChargesService
+    public interface IServiceChargesService : IGenericService<ServiceCharges>
     {
     }
 }

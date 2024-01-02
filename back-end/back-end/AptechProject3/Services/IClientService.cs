@@ -1,6 +1,9 @@
-﻿namespace AptechProject3.Services
+﻿using AptechProject3.Models;
+
+namespace AptechProject3.Services
 {
-    public interface IClientService
+    public interface IClientService : IGenericService<Client>
     {
+
     }
 }

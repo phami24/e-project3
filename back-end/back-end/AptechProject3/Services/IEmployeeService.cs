@@ -1,6 +1,8 @@
-﻿namespace AptechProject3.Services
+﻿using AptechProject3.Models;
+
+namespace AptechProject3.Services
 {
-    public interface IEmployeeService
+    public interface IEmployeeService : IGenericService<Employee>
     {
     }
 }
