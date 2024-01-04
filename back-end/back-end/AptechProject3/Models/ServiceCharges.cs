@@ -15,7 +15,6 @@ namespace AptechProject3.Models
         public double Price{ get; set; }
         [Required]
         public string ServiceChargesDescription { get; set; }
-
     }
 
 }

@@ -5,5 +5,6 @@ namespace AptechProject3.Repository
 {
     public interface IServiceRepository : IGenericRepository<Service>
     {
+        Task<Service?> GetByName(string name);
     }
 }

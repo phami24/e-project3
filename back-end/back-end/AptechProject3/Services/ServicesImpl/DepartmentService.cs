@@ -15,6 +15,30 @@ namespace AptechProject3.Services.ServicesImpl
             _unitOfWork = unitOfWork;
         }
 
+        public async Task<bool> AddEmployee(List<Employee> employees, int departmentId)
+        {
+            try
+            {
+                await _unitOfWork.Departments.AddEmployee(employees, departmentId);
+                var department = await _unitOfWork.Departments.GetById(departmentId);
+                if (department != null)
+                {
+                    foreach (Employee employee in employees)
+                    {
+                        employee.Department = department;
+                        await _unitOfWork.Employees.Update(employee);
+                    }
+                }
+                await _unitOfWork.CompleteAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception accordingly
+                throw new Exception("Error occurred while creating department.", ex);
+
+            }
+        }
 
         public async Task<Department> Create(Department entity)
         {
@@ -67,6 +91,19 @@ namespace AptechProject3.Services.ServicesImpl
             try
             {
                 return await _unitOfWork.Departments.GetById(id);
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception accordingly
+                throw new Exception("Error occurred while retrieving department by ID.", ex);
+            }
+        }
+
+        public async Task<Department?> GetByName(string name)
+        {
+            try
+            {
+                return await _unitOfWork.Departments.GetByName(name);
             }
             catch (Exception ex)
             {

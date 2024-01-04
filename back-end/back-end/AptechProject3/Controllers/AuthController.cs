@@ -96,12 +96,14 @@ namespace AptechProject3.Controllers
                     LastName = request.LastName,
                     Email = request.Email,
                     UserName = request.Email,
-
                 };
                 Department? department = await _departmentService.GetById(request.DepartmentId);
                 if (department != null)
                 {
                     newEmp.Department = department;
+                    List<Employee> employees = new List<Employee>();
+                    employees.Add(newEmp);
+                    await _departmentService.AddEmployee(employees, request.DepartmentId);
                 }
                 else
                 {

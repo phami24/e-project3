@@ -14,9 +14,7 @@ namespace AptechProject3.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        [Required]
         public ICollection<ClientService> ClientServices { get; set; }
-        [Required]
         public ICollection<Payment> Payments { get; set; }
     }
 }

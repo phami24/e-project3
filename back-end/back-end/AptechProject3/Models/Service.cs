@@ -15,5 +15,7 @@ namespace AptechProject3.Models
         public string Description { get; set; }
         [Required]
         public ICollection<ServiceCharges> ServicesCharges { get; set; }
+        [Required]
+        public int TotalDay { get; set; }
     }
 }

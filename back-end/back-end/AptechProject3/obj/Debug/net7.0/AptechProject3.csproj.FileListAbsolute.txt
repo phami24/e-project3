@@ -84,3 +84,5 @@ C:\Users\LAPTOP\Documents\e-project3\back-end\back-end\AptechProject3\obj\Debug\
 C:\Users\LAPTOP\Documents\e-project3\back-end\back-end\AptechProject3\obj\Debug\net7.0\AptechProject3.pdb
 C:\Users\LAPTOP\Documents\e-project3\back-end\back-end\AptechProject3\obj\Debug\net7.0\AptechProject3.genruntimeconfig.cache
 C:\Users\LAPTOP\Documents\e-project3\back-end\back-end\AptechProject3\obj\Debug\net7.0\ref\AptechProject3.dll
+C:\Users\LAPTOP\Documents\e-project3\back-end\back-end\AptechProject3\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\LAPTOP\Documents\e-project3\back-end\back-end\AptechProject3\bin\Debug\net7.0\Stripe.net.dll

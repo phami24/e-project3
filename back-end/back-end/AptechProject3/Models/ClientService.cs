@@ -13,5 +13,9 @@ namespace AptechProject3.Models
         public Client Client { get; set; }
         [Required]
         public Service Service { get; set; }
+        [Required]
+        public string Status { get; set; }
+        public string StartDay { get; set; }
+        public string ExpiredDay { get; set; }
     }
 }

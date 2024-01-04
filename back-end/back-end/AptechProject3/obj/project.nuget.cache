@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZaW6NiAMx681vl+Of/NNhcXw7pylgmVYoeTYQ1VYxbETAhiPJIDjBrTh3C1v22H1OI9QmQ16SPJESGrXQu5sJg==",
+  "dgSpecHash": "fnTtD/hkPLHuMiPAAek2/2IjjUWVPGxlfnU+uWZADWuqJ9LCqps9Ldylg2PuFgeAnNNIRIi7krvWfr2jgkb9wQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\LAPTOP\\Documents\\e-project3\\back-end\\back-end\\AptechProject3\\AptechProject3.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,8 @@
     "C:\\Users\\LAPTOP\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\LAPTOP\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\LAPTOP\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\LAPTOP\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\LAPTOP\\.nuget\\packages\\stripe.net\\43.8.0\\stripe.net.43.8.0.nupkg.sha512",
     "C:\\Users\\LAPTOP\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\LAPTOP\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\LAPTOP\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

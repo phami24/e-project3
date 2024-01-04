@@ -74,6 +74,19 @@ namespace AptechProject3.Services.ServicesImpl
             }
         }
 
+        public async Task<ServiceCharges?> GetByName(string serviceName)
+        {
+            try
+            {
+                return await _unitOfWork.ServicesCharges.GetByName(serviceName);
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception accordingly
+                throw new Exception("Error occurred while retrieving service charges by ID.", ex);
+            }
+        }
+
         public async Task<ServiceCharges> Update(ServiceCharges entity)
         {
             try

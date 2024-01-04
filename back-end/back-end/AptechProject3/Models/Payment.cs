@@ -12,7 +12,9 @@ namespace AptechProject3.Models
         [Required]
         public decimal Amount { get; set; }
         [Required]
-        public DateTime PaymentDate { get; set; }
+        public string PaymentDate { get; set; }
+        [Required]
+        public string Status { get; set; }
         [Required]
         public Client Client { get; set; }
     }

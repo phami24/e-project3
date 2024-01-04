@@ -22,5 +22,19 @@ namespace AptechProject3.Repository.Impl
                 return null;
             }
         }
+
+        public async Task<Service?> GetByName(string name)
+        {
+
+            try
+            {
+                return await _context.Services.AsNoTracking().FirstOrDefaultAsync(x => x.ServiceName == name);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+            }
+        }
     }
 }

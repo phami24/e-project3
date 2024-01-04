@@ -9,7 +9,6 @@ namespace AptechProject3.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
-
         public ICollection<Employee> Employees { get; set; }
     }
 }

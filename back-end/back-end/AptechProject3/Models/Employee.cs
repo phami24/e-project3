@@ -15,7 +15,7 @@ namespace AptechProject3.Models
         [Required]
         public string LastName { get; set; }
         [Required]
-        public string Age { get; set; }
+        public int Age { get; set; }
         [Required]
         public Department Department { get; set; }
         

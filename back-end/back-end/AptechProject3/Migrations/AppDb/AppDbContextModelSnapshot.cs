@@ -100,8 +100,20 @@ namespace AptechProject3.Migrations.AppDb
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ExpiredDay")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
+
+                    b.Property<string>("StartDay")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ClientServiceId");
 
@@ -140,9 +152,8 @@ namespace AptechProject3.Migrations.AppDb
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("Age")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .HasColumnType("nvarchar(max)");
@@ -219,8 +230,13 @@ namespace AptechProject3.Migrations.AppDb
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PaymentDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PaymentId");
 
@@ -265,6 +281,9 @@ namespace AptechProject3.Migrations.AppDb
                     b.Property<string>("ServiceName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalDay")
+                        .HasColumnType("int");
 
                     b.HasKey("ServiceId");
 
